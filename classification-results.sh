@@ -72,7 +72,7 @@ do
   echo "Working on dataset ${DATASET[i]}"
   ./fasttext supervised -input "${DATADIR}/${DATASET[i]}.train" \
     -output "${RESULTDIR}/${DATASET[i]}" -dim 10 -lr "${LR[i]}" -wordNgrams 2 \
-    -minCount 1 -bucket 10000000 -epoch 5 -thread 4 > /dev/null
+    -minCount 1 -bucket 10000000 -epoch 5 -thread 56 > /dev/null
   ./fasttext test "${RESULTDIR}/${DATASET[i]}.bin" \
     "${DATADIR}/${DATASET[i]}.test"
 done
